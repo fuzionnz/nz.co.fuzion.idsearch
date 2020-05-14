@@ -103,28 +103,32 @@ function idsearch_civicrm_caseTypes(&$caseTypes) {
 function idsearch_civicrm_buildForm($formName, &$form) {
   $components = [
     'Activity' => [
-      'form_name' => 'Activity',
+      'form_name' => 'CRM_Activity_Form_Search',
       'insert_after' => 'priority_id',
     ],
     'Contribution' => [
-      'form_name' => 'Contribute',
+      'form_name' => 'CRM_Contribute_Form_Search',
       'insert_after' => 'contribution_trxn_id',
     ],
     'Pledge' => [
-      'form_name' => 'Pledge',
+      'form_name' => 'CRM_Pledge_Form_Search',
       'insert_after' => 'pledge_financial_type_id',
     ],
     'Participant' => [
-      'form_name' => 'Event',
+      'form_name' => 'CRM_Event_Form_Search',
       'insert_after' => 'event_id',
     ],
     'Mailing' => [
-      'form_name' => 'Mailing',
+      'form_name' => 'CRM_Mailing_Form_Search',
       'insert_after' => 'mailing_name',
+    ],
+    'Event' => [
+      'form_name' => 'CRM_Event_Form_SearchEvent',
+      'insert_after' => 'title',
     ],
   ];
   foreach ($components as $key => $component) {
-    if ($formName == "CRM_{$component['form_name']}_Form_Search") {
+    if ($formName == $component['form_name']) {
       $templatePath = realpath(dirname(__FILE__)."/templates");
       $cName = strtolower($key) . '_id';
       $form->assign('component_label', $key);
