@@ -128,9 +128,9 @@ function idsearch_civicrm_buildForm($formName, &$form) {
     ],
   ];
   foreach ($components as $key => $component) {
-    if ($formName == $component['form_name'] && $form->getVar('_context') == 'search') {
+    $cName = strtolower($key) . '_id';
+    if ($formName == $component['form_name'] && !$form->elementExists($cName)) {
       $templatePath = realpath(dirname(__FILE__)."/templates");
-      $cName = strtolower($key) . '_id';
       $form->assign('component_label', $key);
       $form->assign('component_name', $cName);
       $form->assign('insert_after_id', $component['insert_after']);
