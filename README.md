@@ -1,8 +1,6 @@
-# nz.co.fuzion.idsearch
+# Search By Component ID (nz.co.fuzion.idsearch)
 
-![Screenshot](/images/screenshot.png)
-
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+Adds id element on all search forms which allows the user to search by its value.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
@@ -37,8 +35,4 @@ cv en idsearch
 
 ## Usage
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
+After installation, navigate to the search forms and start searching with the id value. CiviCRM already provides the id element on few forms, eg Membership. With this extension, you can find the id element on Activity, Contribution, Pledge, Participant, Mailing & Event search forms as well.
